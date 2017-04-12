@@ -66,5 +66,17 @@ namespace Ploeh.Hyprlinkr
         /// identifed by <paramref name="method" />.
         /// </returns>
         Task<Uri> GetUriAsync<T, TResult>(Expression<Func<T, Task<TResult>>> method);
+
+        /// <summary>
+        /// Creates an URI based on a type-safe expression.
+        /// </summary>
+        /// <param name="method">
+        /// An expression wich identifies the action method that serves the desired resource.
+        /// </param>
+        /// <returns>
+        /// An <see cref="Task{Uri}" /> instance which represents the resource identifed by
+        /// <paramref name="method" />.
+        /// </returns>
+        Task<Uri> GetUriAsync<T>(Expression<Func<T, Task>> method);
     }
 }
